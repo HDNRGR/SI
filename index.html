@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <audio id="talkSound" src="Audios/RetroEffect1.mp3"></audio>
-    <audio id="secondSlideSound" src="Audios/SZAOpenArmsInstrumental.mp3" loop></audio>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <audio id="secondSlideSound" src="Audios/MetroBoominTranceInstrumental.mp3" loop></audio>
 
 
     <title>UtopiaIsWhereYouAre</title>
@@ -15,20 +14,20 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #413834; /* Warm earthy brown */
+            background-color: #413834;
             text-align: center;
-            color: #f2daf3; /* Off-white text */
+            color: #f2daf3;
             display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center; /* Centers vertically */
-            min-height: 100vh; /* Full height for mobile */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             height: 100vh;
-            box-sizing: border-box; /* Ensures padding doesn't break layout */
+            box-sizing: border-box;
         }
 
         .container {
             padding: 20px;
-            background-color: #695d59; /* Soft beige */
+            background-color: #695d59;
             opacity: 80%;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(197, 126, 165, 0.8);
@@ -40,8 +39,8 @@
         }
 
         button {
-            background-color: #C59FA8; /* Dusty pink */
-            color: #FAF5F1; /* Off-white text */
+            background-color: #C59FA8;
+            color: #FAF5F1;
             padding: 15px 15px;
             border: none;
             border-radius: 8px;
@@ -50,26 +49,26 @@
             font-size: 1em;
             width: 10vw;
             position: absolute;
-            bottom: auto; /* Position buttons at the bottom */
-            transition: transform 0.4s ease-out, box-shadow 0.6s ease-out; /* Smooth transition for animation */
+            bottom: auto;
+            transition: transform 0.4s ease-out, box-shadow 0.6s ease-out; 
         }
         
         button.bubbly-effect {
-            transform: scale(1.1); /* Slightly enlarges the button when clicked */
-            box-shadow: 0px 0px 15px rgba(194, 157, 177, 0.8); /* Adds a soft shadow effect */
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(194, 157, 177, 0.8);
         }
         
         button:focus {
-            outline: none; /* Remove the default focus outline */
+            outline: none;
         }
 
         #backButton {
-            left: 10px; /* Position 'Back' button to the left */
+            left: 10px;
         }
 
         #middleButton {
-            background-color: #C59FA8; /* Matches other buttons */
-            color: #FAF5F1; /* Off-white text */
+            background-color: #C59FA8;
+            color: #FAF5F1;
             padding: 15px 15px;
             border: none;
             border-radius: 8px;
@@ -77,25 +76,25 @@
             margin: 10px;
             font-size: 1em;
             position: absolute;
-            left: calc(50% - 37.5%); /* Move the button slightly to the left of center */
-            bottom: auto; /* Position button vertically like the others */
-            transition: transform 0.3s ease, font-size 0.3s ease; /* Transition for smooth resizing */
+            left: calc(50% - 37.5%);
+            bottom: auto;
+            transition: transform 0.3s ease, font-size 0.3s ease;
             transition: 1s;
         }
         
         #middleButton.paused {
-            transform: scale(0.8); /* Shrinks the button by 20% */
-            font-size: 0.8em; /* Optional: Reduce font size to make it look better */
+            transform: scale(0.8);
+            font-size: 0.8em;
             transition: 1s;
         }
 
         #nextButton {
-            right: 10px; /* Position 'Next' button to the right */
+            right: 10px;
         }
 
         #skipButton {
-            background-color: #C59FA8; /* Matches other buttons */
-            color: #FAF5F1; /* Off-white text */
+            background-color: #C59FA8;
+            color: #FAF5F1; 
             padding: 15px 15px;
             border: none;
             border-radius: 8px;
@@ -103,14 +102,14 @@
             margin: 10px;
             font-size: 1em;
             position: absolute;
-            right: calc(50% - 37.5%); /* Position it next to next button */
-            bottom: auto; /* Same as others */
-            transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition */
+            right: calc(50% - 37.5%);
+            bottom: auto; 
+            transition: transform 0.3s ease, font-size 0.3s ease;
         }
         
         #skipButton.bubbly-effect {
-            transform: scale(1.1); /* Slightly enlarges the button when clicked */
-            box-shadow: 0px 0px 15px rgba(194, 157, 177, 0.8); /* Adds a soft shadow effect */
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(194, 157, 177, 0.8);
         }
         
 
@@ -131,7 +130,6 @@
             display: none;
         }
 
-        /* Styling for the Pros and Cons Section */
         .pros-cons {
             margin-top: 20px;
             text-align: center;
@@ -158,7 +156,6 @@
             margin: 5px 0;
         }
 
-        /* Image Slider Styling */
         .slider-container {
             position: relative;
             width: 100%;
@@ -178,41 +175,40 @@
 
         .custom-alert {
             position: fixed;
-            bottom: -100px; /* Start below the viewport */
+            bottom: -100px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(94, 82, 76, 0.75);
             color: #FAF5F1;
             padding: 15px 20px;
-            border-radius: 50px; /* Bubble-like shape */
+            border-radius: 50px;
             box-shadow: 0 0px 30px rgba(158, 125, 144, 0.8);
             z-index: 1000;
             font-size: 1em;
             animation: popUpAndDrop 3s ease-in-out forwards;
-            filter: blur(10px); /* Start with a blur effect */
+            filter: blur(10px);
         }
         
-        /* Animation for popping up, dropping down, and removing the blur */
         @keyframes popUpAndDrop {
             0% {
-                bottom: -100px; /* Start below viewport */
+                bottom: -100px;
                 opacity: 0;
-                filter: blur(10px); /* Start with blur */
+                filter: blur(10px);
             }
             20% {
-                bottom: 50px; /* Move up to visible area */
+                bottom: 50px;
                 opacity: 1;
-                filter: blur(0px); /* Remove blur */
+                filter: blur(0px);
             }
             80% {
-                bottom: 50px; /* Stay visible for a while */
+                bottom: 50px;
                 opacity: 1;
-                filter: blur(0px); /* No blur */
+                filter: blur(0px);
             }
             100% {
-                bottom: -100px; /* Drop down smoothly */
+                bottom: -100px;
                 opacity: 0;
-                filter: blur(10px); /* Add blur again before disappearing */
+                filter: blur(10px);
             }
         }
 
@@ -240,16 +236,15 @@
             position: relative;
         }
 
-        /* New style for the submission alert coming from the top */
         .custom-submit-alert {
             position: fixed;
-            top: -100px; /* Start below the viewport */
+            top: -100px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(94, 82, 76, 0.75);
             color: #FAF5F1;
             padding: 15px 20px;
-            border-radius: 50px; /* Bubble-like shape */
+            border-radius: 50px;
             box-shadow: 0 0px 30px rgba(158, 125, 144, 0.8);
             z-index: 1000;
             font-size: 1em;
@@ -257,17 +252,15 @@
             animation: popUpAndDrop2 4s ease-in-out forwards;
         }
 
-
-/* Custom alert style for individual radio button selection */
-.custom-option-alert {
-    position: fixed;
-            top: -100px; /* Start below the viewport */
+        .custom-option-alert {
+            position: fixed;
+            top: -100px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(94, 82, 76, 0.75);
             color: #FAF5F1;
             padding: 15px 20px;
-            border-radius: 50px; /* Bubble-like shape */
+            border-radius: 50px;
             box-shadow: 0 0px 30px rgba(158, 125, 144, 0.8);
             z-index: 1000;
             font-size: 1em;
@@ -276,74 +269,108 @@
 }
 
 
-@keyframes popUpAndDrop2 {
-    0% {
-        top: -100px; /* Start below viewport */
-        opacity: 0;
-        filter: blur(10px); /* Start with blur */
-    }
-    20% {
-        top: 50px; /* Move up to visible area */
-        opacity: 1;
-        filter: blur(0px); /* Remove blur */
-    }
-    80% {
-        top: 50px; /* Stay visible for a while */
-        opacity: 1;
-        filter: blur(0px); /* No blur */
-    }
-    100% {
-        top: -100px; /* Drop down smoothly */
-        opacity: 0;
-        filter: blur(10px); /* Add blur again before disappearing */
-    }
-}
+        @keyframes popUpAndDrop2 {
+            0% {
+                top: -100px;
+                opacity: 0;
+                filter: blur(10px);
+            }
+            20% {
+                top: 50px;
+                opacity: 1;
+                filter: blur(0px);
+            }
+            80% {
+                top: 50px;
+                opacity: 1;
+                filter: blur(0px);
+            }
+            100% {
+                top: -100px; 
+                opacity: 0;
+                filter: blur(10px);
+            }
+        }
 
-.fade-in {
-    opacity: 0;
-    transition: opacity 2s ease-in;
-}
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
 
-.fade-in.visible {
-    opacity: 1;
-}
+        .fade-in.visible {
+            opacity: 1;
+        }
 
-.bonusReward {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
+        .bonusReward {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
 
-.bonusReward h3 {
-    margin: 0 0 150px 0; /* Add spacing only below the heading */
-}
+        .bonusReward h3 {
+            margin: 0 0 150px 0;
+        }
 
-.button1 {
-    background-color: #C59FA8; /* Matches other buttons */
-            color: #FAF5F1; /* Off-white text */
+        .button1 {
+            background-color: #C59FA8;
+            color: #FAF5F1;
             padding: 15px 15px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             margin: 10px;
             font-size: 1em;
-}
+            width: 10vw;
+            right: 24.3%;
+            bottom: auto;
+        }
 
-#bonusReward a {
-    text-decoration: none; /* Remove underline or link styles */
-    display: inline-block; /* Allow the button to maintain its block-level styling */
-}
+        #bonusReward a {
+            text-decoration: none;
+            display: inline-block;
+        }
 
-.hidden {
-    display: none;
-}
+        .hidden {
+            display: none;
+        }
+
+        .buttonView {
+            background-color: #C59FA8;
+            color: #FAF5F1;
+            padding: 15px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 1em;
+            width: 10vw;
+            left: 35%;
+            bottom: auto;
+            /*display: none;*/
+        }
+
+        .buttonClear {
+            background-color: #C59FA8;
+            color: #FAF5F1;
+            padding: 15px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 1em;
+            width: 10vw;
+            right: 35%;
+            bottom: auto;
+            /*display: none;*/
+        }
  
     </style>
 </head>
+
 <body>
     
     <div class="container">
@@ -357,36 +384,35 @@
         </div>
 
         <div id="slide4" class="slide4 hidden">
-            <h3>idk I kinda got lost building this but the main idea was to<br>reshoot my shot cause I kinda folded the first time.<br>I really wanted to spend more time improving the writing and making it more interesting but number one I suck at writing, and two I get too far ahead of myself then get excited and want to send it to you<br>so I had to meet in the middle cause I can't not show you this now,<br>I was already imagining taking out pictures of you and my car at cool places, I don't even have a car??<br>Whilst also praying I don't see any soft lanuches on your story, keeping this to myself for two weeks was insanely hard but<br>this should paint a better picture of how much<br>I want you.<br>You got me crushing hard dude.
+            <h3>idk but I wanted to say hi again, might have an ever so small crush on you so I thought<br>I should switch it up to get your attention. I just really like your whole vibe you know,<br>so heres a small time intro on me while I got it.</h3>
         </div>
 
-        <!-- Pros and Cons Section (initially hidden) -->
         <div id="prosConsSection" class="pros-cons hidden">
             <h3>Pros and Cons</h3>
             <h4>Pros:</h4>
             <ul>
-                <li>I've never had a girlfriend(I think this is a pro)</li>
-                <li>I've been training for 2 years, went from looking like a stick to looking like a slightly cooler stick.</li>
-                <li>I can hold your purse while you go shopping.</li>
-                <li>I have so many cool date ideas. (and I'm down for whatever, matching fits, picnics, that teacup painting thing, you name it I'm there) (If the homies see this I'm lying)</li>
-                <li>I'm 6ft.</li>
-                <li>I feel like my common sense to book smart ratio is good.<br>(could just be the people I talk to but you'd be surprised at the amount of smart people with literally zero common sense.)</li>
-                <li>I'm home alone most of the time for like months so I know how to take care of myself.</li>
-                <li>As much as I judge the homies for doing this I would 110% abandon them to run to you whenever you called.</li>
+                <li>I've never had a girlfriend (This is a pro right?).</li>
+                <li>I've been training for 2 years, went from looking like a stick to looking like a slightly cooler stick,<br>
+                but at least I'm 6ft (roughly 236 big mac's tall), so theres that.</li>
+                <li>You'll have someone to hold your bags while you go shopping.</li>
+                <li>Got some cool date ideas that definitely doesn't involve us playing gran turismo.</li>
+                <li>I would 110% ditch the homies to chill with you.</li>
                 <li>I don't really drink so you'll always have a sober driver.</li>
                 <li>I would definitely wear a t with your face on it.</li>
+                <li>I like baking, but like sometimes you know.</li>
             </ul>
             <h4>Cons:</h4>
             <ul>
-                <li>I've never had a girlfriend(in the sense that certain things I should know by now I might not)</li>
-                <li>I like to be super clean and these two barbarians in my house don't know how to do that so I'll probably never invite you over cause I'll be freaking out over everything.</li>
-                <li>I'm super awkward around new people so it could take me a day or 17 months to get used to you.</li>
-                <li>A solid 3.5-4/10 purely based on looks.</li>
-                <li>Smoke gas way too much but I'm like 100% sure if you told me you can't stand it I'd stop. </li>
+                <li>These two barbarians in my house don't know how to keep things neat<br>
+                    so I'll probably never invite you over cause I'll be freaking out over everything.</li>
+                <li>I'm super awkward so it could take me a day or 17 months to get used to you.</li>
+                <li>A solid 4.5/10 purely based on looks.</li>
+                <li>If a roach starts flying it's every man for themselves.</li>
+                <li>I would pick you up everyday but I don't have any gas at the moment, or a car.</li>
+                <li>Idk what else, besides that I'm basically perfect.</li>
             </ul>
         </div>
 
-        <!-- Image Slider for Step 3 (initially hidden) -->
         <div id="slider" class="hidden">
             <div class="slider-container">
                 <img src="Images/Image2.png" alt="Image 1" class="slider-image">
@@ -400,39 +426,38 @@
             <button id="nextSliderButton" onclick="nextImage()">Next</button>
         </div>
 
-        <!-- Slide 6: Questionnaire Section -->
 <div id="questionnaireSection" class="hidden">
     <h3></h3>
     <form id="questionnaireForm">
         <h4>Question 1: If I looked at another girl while on a date, how would you react?</h4>
         <label>
-            <input type="radio" name="satisfaction" value="Very Satisfied"> Also take a look
+            <input type="radio" name="satisfaction" value="Also take a look"> Also take a look
         </label>
         <br>
         <label>
-            <input type="radio" name="satisfaction" value="Satisfied"> Pretend like nothing happened
+            <input type="radio" name="satisfaction" value="Pretend like nothing happened"> Pretend like nothing happened
         </label>
         <br>
         <label>
-            <input type="radio" name="satisfaction" value="Neutral"> Doesn't matter to you
+            <input type="radio" name="satisfaction" value="Doesn't matter to you"> Doesn't matter to you
         </label>
         <br>
         <label>
-            <input type="radio" name="satisfaction" value="Dissatisfied"> Shoot me
+            <input type="radio" name="satisfaction" value="Shoot me"> Shoot me
         </label>
         <br><br>
 
         <h4>Question 2: Which one is best movie franchise?</h4>
         <label>
-            <input type="radio" name="recommendation" value="Very Likely"> Sherk
+            <input type="radio" name="recommendation" value="Sherk"> Sherk
         </label>
         <br>
         <label>
-            <input type="radio" name="recommendation" value="Likely"> Kung Fu Panda
+            <input type="radio" name="recommendation" value="Kung Fu Panda"> Kung Fu Panda
         </label>
         <br>
         <label>
-            <input type="radio" name="recommendation" value="Unlikely"> Toy Story
+            <input type="radio" name="recommendation" value="Toy Story"> Toy Story
         </label>
         <br><br>
 
@@ -445,28 +470,43 @@
 </div>
 
 <div id="outro" class="outro hidden">
-    <h3>Yeah I know super short right but damn dude this took so much more time than I thought it would.<br>I might actually update it but as it started getting better I just kept getting way too excited to show you and<br>I literally couldn't wait anymore.</h3>
+    <h3>Yeah I know super short right but damn dude this took so much more time than I thought it would.<br>
+        Maybe I'll make a v2 depending on the success of v1, the problem is everytime I add something cool I want to show it.<br>
+    So I had to compromise coolness for getting your reaction sooner, I'm surprised I lasted two weeks without saying anything.</h3>
 </div>
 
 <div id="slide8" class="slide8 hidden">
-    <h3>Initially I was meant to add a slider so you could actually see the code but apparently it just does not want to work<br>and its so late I might genuinely start losing my marbles. Basically its like 900+ lines of code which took around 30hrs+.<br>PS: Feel free to leave a review in the answer box on STAGE 4.<br>This is my first ever live website, so techincally it'd be my first actual review.<br>No pressure or nothing but I'll beat up my little sister if it's bad.</h3>
+    <h3>Initially I was meant to add a slider so you could actually see the code but apparently it just does not want to work<br>and its so late I might genuinely start losing my marbles. Basically its like 900+ lines of code which took around 30hrs+.
+        <br>PS: Feel free to leave a review in the answer box on STAGE 4.
+        <br>This is my first ever live website, so techincally it'd be my first actual review.
+        <br>No pressure or nothing but I'll beat up my little sister if it's bad.</h3>
+        <button class="buttonView" onclick="viewSubmissions()">View Submissions</button>
+        <button class="buttonClear" onclick="clearSubmissions()">Clear Submissions</button>
+
+    <h5><br> <br>
+        <br> <br>
+        <br> <br>
+        (You can only have up to four submissions at a time)</h5>
 </div>
 
 <div id="bonusReward" class="bonusReward hidden">
-    <h3>Was not sure if I could link an Apple Music playlist so I had to do it on Spotify.</h3>
+    <h3>Was not sure if I could link an Apple Music playlist so I had to do it on Spotify.<br>
+    (Press CLAIM to open)</h3>
     <a href="https://open.spotify.com/playlist/7fLBczEIRioAgnECEPy4mL?si=7292WNYwSsiSLEAPjVtaew&pt=583b2d8e655218aeacfb9034a8ccf0b9&pi=e-vu0k80JqSNqX">
         <button id="bonusButton" class="button1">CLAIM</button>
     </a>
+
 </div>
 
-        <!-- Navigation buttons -->
         <button id="backButton" class="hidden" onclick="moveBack()">Back</button>
         <button id="middleButton" class="hidden" onclick="middleFunction()">PAUSE</button> <!-- New middle button -->
         <button id="skipButton" class="hidden">SKIP</button> <!-- New empty button next to Next button -->
         <button id="nextButton" onclick="moveNext()">Next</button>
+
     </div>
     
     <script>
+
         let currentStep = 1;
         let isPlaying = false;
 
@@ -476,34 +516,33 @@
             { h1: "STAGE 1", h2: "SETTING THE MOOD ;)" },
             { h1: "DISCLAIMER", h2: "I built this website from scratch so if you see any bugs, no you didn't." },
             { h1: "WHY ARE YOU HERE?", h2: "GOOD QUESTION" },
-            { h1: "STAGE 2", h2: "A BIT ABOUT ME" },
-            { h1: "STAGE 3", h2: "SOME MEMES" },
-            { h1: "STAGE 4", h2: "A BIT ABOUT YOU" },
+            { h1: "STAGE 2", h2: "A LIL BIBLIOGRAPHY OF ME" },
+            { h1: "STAGE 3", h2: "I JUST WANTED TO ADD AN IMAGE SLIDER" },
+            { h1: "STAGE 4", h2: "TALK TO ME DAWG" },
             { h1: "OUTRO", h2: "Hope this was as fun as it was making it" },
-            { h1: "BONUS CONTENT", h2: "BEHIND THE SCENES" },  // New slide added here
+            { h1: "BONUS CONTENT", h2: "BEHIND THE SCENES" },
             { h1: "BONUS REWARD", h2: "PLAYLIST" },
         ];
 
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', function() {
-                // Add bubbly animation class when clicked
+                //bubbly animation when clicked
                 this.classList.add('bubbly-effect');
                 
-                // Remove the animation class after the animation duration (0.3s)
                 setTimeout(() => {
                     this.classList.remove('bubbly-effect');
-                }, 700); // Match the transition duration
+                }, 700);
             });
         });
         
-        // Define multiple audio tracks
         const audioTracks = [
-        "Audios/SZAOpenArmsInstrumental.mp3",
         "Audios/MetroBoominTranceInstrumental.mp3",
+        "Audios/OhUWentInstrumental.mp3",
+        "Audios/SZAOpenArmsInstrumental.mp3",
         "Audios/MetroBoominDreamcatcherInstrumental.mp3",
         ];
 
-        let currentAudioIndex = 0; // Start with the second track
+        let currentAudioIndex = 0;
 
         // Function to play the next audio in the array
         function playNextAudio() {
@@ -522,7 +561,7 @@
             const audio = document.getElementById('talkSound');
             audio.currentTime = 0; // Reset sound to the start
             audio.play();
-            audio.volume = 0.4; // Set volume
+            audio.volume = 0.6; // Set volume
         }
 
         function playSecondSlideSound() {
@@ -544,9 +583,9 @@
             }
 
             if (currentStep === 11) {
-                // Refresh the page when at step 7
+                // Refresh the page when at step 11
                 location.reload();
-                return; // Prevent further execution for step 7
+                return; // Prevent further execution for step 11
             }
 
             updateTextContent();
@@ -559,7 +598,6 @@
         "So this is what a fineapple looks like.",
         "3:00 - pick up the phone",
         "Owls are so cool.",
-        "You got me wishing I was a frog.",
         "No music? You just gonna raw dog this survey?",
         "You definitely came from a land far, far away.",
         "I forget I can literally put whatever I want.",
@@ -574,7 +612,6 @@
         "You ever saw Spiderman and me in the same room together?",
         "Fun fact: If you press buttons fast enough it'll break the site",
         "Eargasms incoming.",
-        "You look like fresh McDonald fries at 3am.",
         "What a wonderful vibe.",
         "You so fine ma'am.",
         "Fuck cockroaches again.",
@@ -616,12 +653,11 @@
         // Create the alert element
         const alertBox = document.createElement('div');
         alertBox.textContent = message;
-        alertBox.className = 'custom-alert'; // Add a class for styling
+        alertBox.className = 'custom-alert'; //class for styling
 
         // Append the alert to the body
         document.body.appendChild(alertBox);
 
-        // Remove the alert after the animation ends (3s + 1s animation delay)
         setTimeout(() => {
             alertBox.remove();
         }, 4000);
@@ -668,8 +704,8 @@
         function updateButtons() {
             const backButton = document.getElementById('backButton');
             const nextButton = document.getElementById('nextButton');
-            const middleButton = document.getElementById('middleButton'); // Reference to the middle button
-            const skipButton = document.getElementById('skipButton'); // Reference to the skip button
+            const middleButton = document.getElementById('middleButton');
+            const skipButton = document.getElementById('skipButton');
         
             // Show or hide the Back button based on the current step
             if (currentStep === 1) {
@@ -678,22 +714,19 @@
                 backButton.classList.remove('hidden'); // Show the Back button on other steps
             }
         
-            // Show or hide the middle button based on specific steps
             if (currentStep === 1) {
-                middleButton.classList.add('hidden'); // Hide it on other steps
+                middleButton.classList.add('hidden');
             } else {
-                middleButton.classList.remove('hidden');  // Show the middle button on Step 3
+                middleButton.classList.remove('hidden');
             }
         
-            // Show the Skip button from Step 4 onwards
             if (currentStep === 1) {
-                skipButton.classList.add('hidden'); // Show the skip button on Step 4 and beyond
+                skipButton.classList.add('hidden');
             } else {
-                skipButton.classList.remove('hidden'); // Hide the skip button on earlier steps
+                skipButton.classList.remove('hidden');
             }
         }
         
-
         // Image Slider Logic
         let currentImageIndex = 0;
 
@@ -727,8 +760,8 @@
         updateTextContent();
         updateButtons();
 
-        // Show the questionnaire on Slide 6
-    function updateTextContent() {
+        //questionnaire on Slide 6
+        function updateTextContent() {
         const h1Element = document.querySelector('h1');
         const h2Element = document.querySelector('#textContent h2');
         const currentData = stepsContent[currentStep - 1];
@@ -742,7 +775,6 @@
     }
 
         if (h1Element && currentData.h1) {
-            // Set duration for h1 to 1.5 seconds
             typewriterEffect(h1Element, currentData.h1, 500, () => {
                 // After typing h1, type h2 with a duration of 2.5 seconds
                 if (h2Element && currentData.h2) {
@@ -757,16 +789,16 @@
 
         if (currentStep === 2) {
             setTimeout(() => {
-                showCustomSubmitAlert("Whats up Shri!, I'm here to give you some tips along the way");
+                showCustomSubmitAlert("Whats up Shri!, I'm here to walk you through this.");
             }, 3500);
             setTimeout(() => {
-                showCustomSubmitAlert("And the first would be using a laptop for the best experience.");
+                showCustomSubmitAlert("The first thing would be using a laptop for the best experience.");
             }, 6500);
             setTimeout(() => {
-                showCustomSubmitAlert("Sorry about that I don't know what phone you have...");
+                showCustomSubmitAlert("My apologies but I don't know what phone you have...");
             }, 9500);
             setTimeout(() => {
-                showCustomSubmitAlert("so it's hard to optimize sizes, rotating your phone should help though.");
+                showCustomSubmitAlert("so it's hard to optimize sizes, rotating your phone should help if need be.");
             }, 12500);
         }
 
@@ -777,6 +809,12 @@
             setTimeout(() => {
                 showCustomSubmitAlert("just type then press submit.");
             }, 4500);
+        }
+
+        if (currentStep === 9) {
+            setTimeout(() => {
+                showCustomSubmitAlert("Tips are accepted in the form of phones numbers.");
+            }, 5000);
         }
         
 
@@ -822,14 +860,14 @@
 
         if (currentStep === 10) {
             setTimeout(() => {
-                showCustomSubmitAlert("Imagine the claim was aligned cause its 4:33am and idk how to fix it.");
-            }, 2000);
+                showCustomSubmitAlert("It's been a real pleasure Shri");
+            }, 3000);
             setTimeout(() => {
-                showCustomSubmitAlert("but it's been real.");
-            }, 7000);
+                showCustomAlert("but unfortunately this is where we part ways.");
+            }, 6000); // # milliseconds delay
             setTimeout(() => {
-                showCustomAlert("I shall catch you on the other side.");
-            }, 9000); // # milliseconds delay
+                showCustomSubmitAlert("Hope to hear from you soon :)");
+            }, 8500);
         } 
 
         // Show BonusReward Slide
@@ -842,7 +880,6 @@
             bonusReward.classList.add('hidden');
         }
 
-
         // Show Slide 4
         const slide4 = document.getElementById('slide4');
         if (currentStep === 4) {
@@ -851,7 +888,6 @@
             slide4.classList.add('hidden');
         }
 
-        // Show Slide 4
         const stage1 = document.getElementById('stage1');
         if (currentStep === 2) {
             stage1.classList.remove('hidden');
@@ -859,111 +895,119 @@
             stage1.classList.add('hidden');
         }
         
-
-        // Ensure other elements are hidden initially
         const otherElements = document.querySelectorAll('h3, h4, h5, h6, p, .other-content');
         otherElements.forEach((el) => {
-            el.classList.remove('visible');
-            el.classList.add('fade-in');
+            el.classList.remove('visible'); // Remove visibility
+            el.classList.add('fade-in');    // Add fade-in class for transition
         });
+
+        setTimeout(() => {
+            otherElements.forEach((el) => {
+                el.classList.add('visible'); // Add visible after fade-in transition time
+            });
+        }, 500); // Ensure this happens after fade-in duration
 }
 
-// Function to fade in other elements
-function fadeInOtherElements() {
-    const otherElements = document.querySelectorAll('h3, h4, h5, h6, p, .other-content');
-    setTimeout(() => {
-        otherElements.forEach((el) => {
-            el.classList.add('visible'); // Add the visible class to trigger fade-in
-        });
-    }, 2000); // Delay by 2 seconds
-}
-
-    // Function to handle questionnaire submission
-function submitQuestionnaire() {
-    const form = document.getElementById('questionnaireForm');
-    const formData = new FormData(form);
-
-    // Extract the form values
-    const data = {
-        satisfaction: formData.get('satisfaction'), // Get value of selected radio button for question 1
-        recommendation: formData.get('recommendation'), // Get value of selected radio button for question 2
-        feature: formData.get('feature') // Get value of the text input for question 3
-    };
-
-    // Send the email using EmailJS
-    emailjs.send('service_b044vsz', 'template_vjblazd', data)
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Form submitted successfully!');
-        })
-        .catch((error) => {
-            console.error('FAILED...', error);
-            alert('Failed to submit the form. Please try again.');
-        });
+        // Function to fade in other elements
+        function submitQuestionnaire() {
+            const form = document.getElementById('questionnaireForm');
+            const formData = new FormData(form);
         
-}
+            const data = {
+                satisfaction: formData.get('satisfaction'), 
+                recommendation: formData.get('recommendation'),
+                feature: formData.get('feature'),
+                timestamp: new Date().toISOString() // Add timestamp for context
+            };
+        
+            // Retrieve existing data from localStorage
+            let submissions = JSON.parse(localStorage.getItem('submissions')) || [];
+        
+            // Add the new submission
+            submissions.push(data);
+        
+            // Save back to localStorage
+            localStorage.setItem('submissions', JSON.stringify(submissions));
+        
+            showCustomSubmitAlert("Noice thanks for the feedback princess");
+            console.log('Saved Submissions:', submissions);
+        }
 
-(function() {
-       emailjs.init('FPlsrO11rDXCSN1b4'); // Replace with your EmailJS public key
-   })();
+        // Function to show the custom submit alert at the top
+        function showCustomSubmitAlert(message) {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = message;
+            alertBox.className = 'custom-submit-alert';  // Use the new class for the top alert
 
-// Function to show the custom submit alert at the top
-function showCustomSubmitAlert(message) {
-    const alertBox = document.createElement('div');
-    alertBox.textContent = message;
-    alertBox.className = 'custom-submit-alert';  // Use the new class for the top alert
+            // Append the alert to the body
+            document.body.appendChild(alertBox);
 
-    // Append the alert to the body
-    document.body.appendChild(alertBox);
+            // Remove the alert after the animation ends (4s total)
+            setTimeout(() => {
+                alertBox.remove();
+            }, 6000);
+        }
 
-    // Remove the alert after the animation ends (4s total)
-    setTimeout(() => {
-        alertBox.remove();
-    }, 6000);
-}
+        // Function to show the custom option alert
+        function showCustomOptionAlert(message) {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = message;
+            alertBox.className = 'custom-option-alert';
 
-// Function to show the custom option alert
-function showCustomOptionAlert(message) {
-    const alertBox = document.createElement('div');
-    alertBox.textContent = message;
-    alertBox.className = 'custom-option-alert'; // Use the same class for the alert
+            document.body.appendChild(alertBox);
 
-    // Append the alert to the body
-    document.body.appendChild(alertBox);
+            setTimeout(() => {
+                alertBox.remove();
+            }, 6000);
+        }
 
-    // Remove the alert after the animation ends (4s total)
-    setTimeout(() => {
-        alertBox.remove();
-    }, 6000);
-}
-
-// Add event listeners to the radio buttons for showing custom alerts
-document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', function() {
-        const message = getAlertMessage(this.name, this.value);  // Get the message for the selected option
-        showCustomOptionAlert(message);  // Show the alert
+        // Add event listeners to the radio buttons for showing custom alerts
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const message = getAlertMessage(this.name, this.value);  // Get the message for the selected option
+                showCustomOptionAlert(message);  // Show the alert
     });
 });
 
-// Function to return a custom message based on the selected option
-function getAlertMessage(question, value) {
-    const messages = {
-        satisfaction: {
-            'Very Satisfied': 'Nah.',
-            'Satisfied': 'Nope.',
-            'Neutral': 'Try again.',
-            'Dissatisfied': 'Ay siri play My Type by Saweetie',
-        },
-        recommendation: {
-            'Very Likely': 'Valid choice.',
-            'Likely': 'Is it too early to drop the L bomb.',
-            "Unlikely": "Don't do drugs whilst taking this survey.",
-        }
-    };
-    
+    // Function to return a custom message based on the selected option
+    function getAlertMessage(question, value) {
+        const messages = {
+            satisfaction: {
+                'Also take a look': 'Maybe no.',
+                'Pretend like nothing happened': 'Nope.',
+                'Doesn\'t matter to you': 'Try again.',
+                'Shoot me': 'Ay Siri play that one Saweetie track!',
+            },
+            recommendation: {
+                'Sherk': 'Valid choice',
+                'Kung Fu Panda': 'Is it too early to drop the L bomb?',
+                'Toy Story': 'Do not take this survey under the influence.',
+            }
+        };
+
     return messages[question][value] || 'Interesting choice!';
 }
-    </script>
 
-</body>
+
+    function viewSubmissions() {
+        let submissions = JSON.parse(localStorage.getItem('submissions')) || [];
+        console.log('All Submissions:', submissions);
+        alert(JSON.stringify(submissions, null, 2)); // Show submissions in a popup
+    }    
+
+    function clearSubmissions() {
+        // Confirm before clearing the list
+        const confirmClear = confirm("Are you sure you want to clear all submissions?");
+        if (confirmClear) {
+            localStorage.removeItem('submissions'); // Remove the submissions from localStorage
+            alert('All submissions have been cleared!');
+            console.log('Submissions cleared.');
+        }
+    }
+    
+
+        </script>
+
+    </body>
+
 </html>
