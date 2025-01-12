@@ -921,24 +921,6 @@ function submitQuestionnaire() {
             alert('Failed to submit the form. Please try again.');
         });
 }
-
-
-
-// Function to show the custom submit alert at the top
-function showCustomSubmitAlert(message) {
-    const alertBox = document.createElement('div');
-    alertBox.textContent = message;
-    alertBox.className = 'custom-submit-alert';  // Use the new class for the top alert
-
-    // Append the alert to the body
-    document.body.appendChild(alertBox);
-
-    // Remove the alert after the animation ends (4s total)
-    setTimeout(() => {
-        alertBox.remove();
-    }, 6000);
-}
-
 // Function to show the custom option alert
 function showCustomOptionAlert(message) {
     const alertBox = document.createElement('div');
