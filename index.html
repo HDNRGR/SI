@@ -8,6 +8,7 @@
     <audio id="secondSlideSound" src="Audios/SZAOpenArmsInstrumental.mp3" loop></audio>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+
     <title>UtopiaIsWhereYouAre</title>
     <style>
         body {
@@ -356,7 +357,7 @@
         </div>
 
         <div id="slide4" class="slide4 hidden">
-            <h3>idk I kinda got lost building this but the main idea was to<br>reshoot my shot cause I kinda folded the first time.<br>I really wanted to spend more time improving the writing and making it more interesting but number one I suck at writing<br>and two I get too far ahead of myself then get excited and want to send it to you<br>so I had to meet in the middle cause I can't not show you this now,<br>I was already imagining taking out pictures of you and my car at cool places, I don't even have a car??<br>Whilst also praying I don't see any soft lanuches on your story, keeping this to myself for two weeks was insanely hard but<br>this should paint a better picture of how much<br>I want you.<br>You got me crushing hard dude.
+            <h3>idk I kinda got lost building this but the main idea was to<br>reshoot my shot cause I kinda folded the first time.<br>I really wanted to spend more time improving the writing and making it more interesting but number one I suck at writing, and two I get too far ahead of myself then get excited and want to send it to you<br>so I had to meet in the middle cause I can't not show you this now,<br>I was already imagining taking out pictures of you and my car at cool places, I don't even have a car??<br>Whilst also praying I don't see any soft lanuches on your story, keeping this to myself for two weeks was insanely hard but<br>this should paint a better picture of how much<br>I want you.<br>You got me crushing hard dude.
         </div>
 
         <!-- Pros and Cons Section (initially hidden) -->
@@ -877,10 +878,7 @@ function fadeInOtherElements() {
     }, 2000); // Delay by 2 seconds
 }
 
-        // Function to handle questionnaire submission
-        // Initialize EmailJS with your public API key
-emailjs.init('FPlsrO11rDXCSN1b4');  // Replace with your public API key
-// Function to handle questionnaire submission
+    // Function to handle questionnaire submission
 function submitQuestionnaire() {
     const form = document.getElementById('questionnaireForm');
     const formData = new FormData(form);
@@ -909,18 +907,21 @@ function submitQuestionnaire() {
        emailjs.init('FPlsrO11rDXCSN1b4'); // Replace with your EmailJS public key
    })();
 
+// Function to show the custom submit alert at the top
+function showCustomSubmitAlert(message) {
+    const alertBox = document.createElement('div');
+    alertBox.textContent = message;
+    alertBox.className = 'custom-submit-alert';  // Use the new class for the top alert
 
-    // Send the email using EmailJS
-    emailjs.send('service_b044vsz', 'template_vjblazd', data)
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Form submitted successfully!');
-        })
-        .catch((error) => {
-            console.error('FAILED...', error);
-            alert('Failed to submit the form. Please try again.');
-        });
+    // Append the alert to the body
+    document.body.appendChild(alertBox);
+
+    // Remove the alert after the animation ends (4s total)
+    setTimeout(() => {
+        alertBox.remove();
+    }, 6000);
 }
+
 // Function to show the custom option alert
 function showCustomOptionAlert(message) {
     const alertBox = document.createElement('div');
