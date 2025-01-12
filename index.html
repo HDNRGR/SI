@@ -878,7 +878,10 @@ function fadeInOtherElements() {
     }, 2000); // Delay by 2 seconds
 }
 
-    // Function to handle questionnaire submission
+        // Initialize EmailJS with your public API key
+emailjs.init('FPlsrO11rDXCSN1b4');  // Replace with your public API key
+
+// Function to handle questionnaire submission
 function submitQuestionnaire() {
     const form = document.getElementById('questionnaireForm');
     const formData = new FormData(form);
@@ -900,12 +903,9 @@ function submitQuestionnaire() {
             console.error('FAILED...', error);
             alert('Failed to submit the form. Please try again.');
         });
-        
 }
 
-(function() {
-       emailjs.init('FPlsrO11rDXCSN1b4'); // Replace with your EmailJS public key
-   })();
+
 
 // Function to show the custom submit alert at the top
 function showCustomSubmitAlert(message) {
