@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <audio id="talkSound" src="Audios/RetroEffect1.mp3"></audio>
     <audio id="secondSlideSound" src="Audios/SZAOpenArmsInstrumental.mp3" loop></audio>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <title>UtopiaIsWhereYouAre</title>
     <style>
@@ -880,6 +881,9 @@ function fadeInOtherElements() {
         // Initialize EmailJS with your public API key
 emailjs.init('FPlsrO11rDXCSN1b4');  // Replace with your public API key
 
+ // Initialize EmailJS with your public API key
+emailjs.init('FPlsrO11rDXCSN1b4');  // Replace with your public API key
+
 // Function to handle questionnaire submission
 function submitQuestionnaire() {
     const form = document.getElementById('questionnaireForm');
@@ -891,6 +895,19 @@ function submitQuestionnaire() {
         recommendation: formData.get('recommendation'), // Get value of selected radio button for question 2
         feature: formData.get('feature') // Get value of the text input for question 3
     };
+
+    // Send the email using EmailJS
+    emailjs.send('service_b044vsz', 'template_vjblazd', data)
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Form submitted successfully!');
+        })
+        .catch((error) => {
+            console.error('FAILED...', error);
+            alert('Failed to submit the form. Please try again.');
+        });
+}
+
 
     // Send the email using EmailJS
     emailjs.send('service_b044vsz', 'template_vjblazd', data)
