@@ -877,13 +877,9 @@ function fadeInOtherElements() {
     }, 2000); // Delay by 2 seconds
 }
 
-        import emailjs from '@emailjs/browser';  // Import EmailJS SDK
+        // Function to handle questionnaire submission
         // Initialize EmailJS with your public API key
 emailjs.init('FPlsrO11rDXCSN1b4');  // Replace with your public API key
-
- // Initialize EmailJS with your public API key
-emailjs.init('FPlsrO11rDXCSN1b4');  // Replace with your public API key
-
 // Function to handle questionnaire submission
 function submitQuestionnaire() {
     const form = document.getElementById('questionnaireForm');
@@ -906,7 +902,12 @@ function submitQuestionnaire() {
             console.error('FAILED...', error);
             alert('Failed to submit the form. Please try again.');
         });
+        
 }
+
+(function() {
+       emailjs.init('FPlsrO11rDXCSN1b4'); // Replace with your EmailJS public key
+   })();
 
 
     // Send the email using EmailJS
