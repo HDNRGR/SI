@@ -353,7 +353,7 @@
             width: 10vw;
             left: 35%;
             bottom: auto;
-            /*display: none;*/
+            display: none;
         }
 
         .buttonClear {
@@ -368,13 +368,15 @@
             width: 10vw;
             right: 35%;
             bottom: auto;
-            /*display: none;*/
+            display: none
         }
  
     </style>
 </head>
 
 <body>
+
+    <img src="https://hdnrgr.github.io/SI/Images/Image8.png" style="display:none;" alt="OG Image">
     
     <div class="container">
         <h1>INTRO</h1>
@@ -474,22 +476,23 @@
 
 <div id="outro" class="outro hidden">
     <h3>Yeah I know super short right but damn dude this took so much more time than I thought it would.<br>
-        Maybe I'll make a v2 depending on the success of v1, the problem is everytime I add something cool I want to show it.<br>
+        The problem is everytime I add something cool I want to show it to you.<br>
     So I had to compromise coolness for getting your reaction sooner, I'm surprised I lasted two weeks without saying anything.</h3>
 </div>
 
 <div id="slide8" class="slide8 hidden">
-    <h3>Initially I was meant to add a slider so you could actually see the code but apparently it just does not want to work<br>and its so late I might genuinely start losing my marbles. Basically its like 900+ lines of code which took around 30hrs+.
+    <h3>Initially I was meant to add a slider so you could actually see the code but apparently it just does not want to work
+        <br>and its so late I might genuinely start losing my marbles. Basically its like 900+ lines of code which took around 30hrs+.
         <br>PS: Feel free to leave a review in the answer box on STAGE 4.
         <br>This is my first ever live website, so techincally it'd be my first actual review.
         <br>No pressure or nothing but I'll beat up my little sister if it's bad.</h3>
         <button class="buttonView" onclick="viewSubmissions()">View Submissions</button>
         <button class="buttonClear" onclick="clearSubmissions()">Clear Submissions</button>
 
-    <h5><br> <br>
-        <br> <br>
-        <br> <br>
-        (You can only have up to four submissions at a time)</h5>
+    <h5>(Okay so its 2am and it turns out the submissions store locally which basically means I can't see your responses.
+        <br>I've spent like 6 hours tryna fix it but idk the databases just don't want to connect, sorry for
+        <br>the rather dissapointing end but you can text me your answers and reviews,
+        <br>I know that kinda takes the fun out of it but I'm still really curious.)</h5>
 </div>
 
 <div id="bonusReward" class="bonusReward hidden">
@@ -814,12 +817,6 @@
             }, 4500);
         }
 
-        if (currentStep === 9) {
-            setTimeout(() => {
-                showCustomSubmitAlert("Tips are accepted in the form of phones numbers.");
-            }, 5000);
-        }
-        
 
         // Show questionnaire section only on Step 6
         const questionnaireSection = document.getElementById('questionnaireSection');
@@ -911,34 +908,29 @@
         }, 500); // Ensure this happens after fade-in duration
 }
 
+        // Function to fade in other elements
         function submitQuestionnaire() {
             const form = document.getElementById('questionnaireForm');
             const formData = new FormData(form);
-
+        
             const data = {
-                satisfaction: formData.get('satisfaction'),
+                satisfaction: formData.get('satisfaction'), 
                 recommendation: formData.get('recommendation'),
-                feature: formData.get('feature')
+                feature: formData.get('feature'),
+                timestamp: new Date().toISOString() // Add timestamp for context
             };
-
-            fetch('/submit-form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Thank you for submitting the form!');
-                } else {
-                    alert('Oops! Something went wrong. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Unable to connect to the server. Please try again later.');
-            });
+        
+            // Retrieve existing data from localStorage
+            let submissions = JSON.parse(localStorage.getItem('submissions')) || [];
+        
+            // Add the new submission
+            submissions.push(data);
+        
+            // Save back to localStorage
+            localStorage.setItem('submissions', JSON.stringify(submissions));
+        
+            showCustomSubmitAlert("Noice thanks for the feedback princess");
+            console.log('Saved Submissions:', submissions);
         }
 
         // Function to show the custom submit alert at the top
@@ -977,21 +969,21 @@
     });
 });
 
-        // Function to return a custom message based on the selected option
-        function getAlertMessage(question, value) {
-            const messages = {
-                satisfaction: {
-                    'Also take a look': 'Maybe no.',
-                    'Pretend like nothing happened': 'Nope.',
-                    'Doesn\'t matter to you': 'Try again.',
-                    'Shoot me': 'Ay Siri play that one Saweetie track!',
-                },
-                recommendation: {
-                    'Sherk': 'Valid choice',
-                    'Kung Fu Panda': 'Is it too early to drop the L bomb?',
-                    'Toy Story': 'Do not take this survey under the influence.',
-                }
-            };
+    // Function to return a custom message based on the selected option
+    function getAlertMessage(question, value) {
+        const messages = {
+            satisfaction: {
+                'Also take a look': 'Maybe no.',
+                'Pretend like nothing happened': 'Nope.',
+                'Doesn\'t matter to you': 'Try again.',
+                'Shoot me': 'Ay Siri play that one Saweetie track!',
+            },
+            recommendation: {
+                'Sherk': 'Valid choice',
+                'Kung Fu Panda': 'Is it too early to drop the L bomb?',
+                'Toy Story': 'Do not take this survey under the influence.',
+            }
+        };
 
     return messages[question][value] || 'Interesting choice!';
 }
