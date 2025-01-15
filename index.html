@@ -475,7 +475,7 @@
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://hdnrgr.github.io/SI/">
         
-                <button type="submit">SUBMIT</button>
+                <button type="button" id="submitButton">SUBMIT</button>
             </form>
         </div>
 
@@ -932,25 +932,6 @@
             }, 6000);
         }
 
-        // Ensure after form submission, it brings you to slide 7
-    document.getElementById("questionnaireForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from redirecting immediately
-
-        // Directly go to slide 7
-        currentStep = 7;
-        showStep(currentStep); // Navigate to slide 7 after form submission
-
-        // Submit the form normally
-        this.submit();
-    });
-    
-    // Function to show the current slide
-    function showStep(step) {
-        document.querySelectorAll('.slide').forEach(slide => slide.classList.add('hidden'));
-        document.getElementById('slide' + step).classList.remove('hidden');
-    }
-
-
         // Function to show the custom option alert
         function showCustomOptionAlert(message) {
             const alertBox = document.createElement('div');
@@ -1006,6 +987,23 @@
             alert('All submissions have been cleared!');
             console.log('Submissions cleared.');
         }
+    }
+
+        document.getElementById("questionnaireForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from redirecting immediately
+
+        // Directly go to slide 7
+        currentStep = 7;
+        showStep(currentStep); // Navigate to slide 7 after form submission
+
+        // Submit the form normally
+        this.submit();
+    });
+    
+    // Function to show the current slide
+    function showStep(step) {
+        document.querySelectorAll('.slide').forEach(slide => slide.classList.add('hidden'));
+        document.getElementById('slide' + step).classList.remove('hidden');
     }
 
         </script>
