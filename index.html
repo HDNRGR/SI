@@ -431,48 +431,54 @@
             <button id="nextSliderButton" onclick="nextImage()">Next</button>
         </div>
 
-<div id="questionnaireSection" class="hidden">
-    <h3></h3>
-    <form id="questionnaireForm">
-        <h4>Question 1: If I looked at another girl while on a date, how would you react?</h4>
-        <label>
-            <input type="radio" name="satisfaction" value="Also take a look"> Also take a look
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="satisfaction" value="Pretend like nothing happened"> Pretend like nothing happened
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="satisfaction" value="Doesn't matter to you"> Doesn't matter to you
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="satisfaction" value="Shoot me"> Shoot me
-        </label>
-        <br><br>
-
-        <h4>Question 2: Which one is best movie franchise?</h4>
-        <label>
-            <input type="radio" name="recommendation" value="Sherk"> Sherk
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="recommendation" value="Kung Fu Panda"> Kung Fu Panda
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="recommendation" value="Toy Story"> Toy Story
-        </label>
-        <br><br>
-
-        <h4>Question 3: Anything I need a heads up on?</h4>
-        <input type="text" name="feature" placeholder="(eg. Allergies............a boyfriend)" />
-        <br><br>
-
-        <button type="button" onclick="submitQuestionnaire()">SUBMIT</button>
-    </form>
-</div>
+        <div id="questionnaireSection" class="hidden">
+            <h3></h3>
+            <form id="questionnaireForm" action="https://formsubmit.co/hidden.rager@gmail.com" method="POST">
+                <h4>Question 1: If I looked at another girl while on a date, how would you react?</h4>
+                <label>
+                    <input type="radio" name="reaction" value="Also take a look" required> Also take a look
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="reaction" value="Pretend like nothing happened"> Pretend like nothing happened
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="reaction" value="Doesn't matter to you"> Doesn't matter to you
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="reaction" value="Shoot me"> Shoot me
+                </label>
+                <br><br>
+        
+                <h4>Question 2: Which one is the best movie franchise?</h4>
+                <label>
+                    <input type="radio" name="favorite_movie" value="Shrek" required> Shrek
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="favorite_movie" value="Kung Fu Panda"> Kung Fu Panda
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="favorite_movie" value="Toy Story"> Toy Story
+                </label>
+                <br><br>
+        
+                <h4>Question 3: Anything I need a heads up on?</h4>
+                <input type="text" name="heads_up" placeholder="(e.g., Allergies, a boyfriend)">
+                <br><br>
+        
+                <!-- Hidden fields for extra functionality -->
+                <input type="hidden" name="_subject" value="New Questionnaire Submission">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://your-site.com/thank-you">
+        
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+        
 
 <div id="outro" class="outro hidden">
     <h3>Yeah I know super short right but damn dude this took so much more time than I thought it would.<br>
@@ -911,31 +917,6 @@
             });
         }, 500); // Ensure this happens after fade-in duration
 }
-
-        // Function to fade in other elements
-        function submitQuestionnaire() {
-            const form = document.getElementById('questionnaireForm');
-            const formData = new FormData(form);
-        
-            const data = {
-                satisfaction: formData.get('satisfaction'), 
-                recommendation: formData.get('recommendation'),
-                feature: formData.get('feature'),
-                timestamp: new Date().toISOString() // Add timestamp for context
-            };
-        
-            // Retrieve existing data from localStorage
-            let submissions = JSON.parse(localStorage.getItem('submissions')) || [];
-        
-            // Add the new submission
-            submissions.push(data);
-        
-            // Save back to localStorage
-            localStorage.setItem('submissions', JSON.stringify(submissions));
-        
-            showCustomSubmitAlert("Noice thanks for the feedback princess");
-            console.log('Saved Submissions:', submissions);
-        }
 
         // Function to show the custom submit alert at the top
         function showCustomSubmitAlert(message) {
