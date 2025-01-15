@@ -989,23 +989,6 @@
         }
     }
 
-        document.getElementById("questionnaireForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from redirecting immediately
-
-        // Directly go to slide 7
-        currentStep = 7;
-        showStep(currentStep); // Navigate to slide 7 after form submission
-
-        // Submit the form normally
-        this.submit();
-    });
-    
-    // Function to show the current slide
-    function showStep(step) {
-        document.querySelectorAll('.slide').forEach(slide => slide.classList.add('hidden'));
-        document.getElementById('slide' + step).classList.remove('hidden');
-    }
-
         </script>
 
     </body>
