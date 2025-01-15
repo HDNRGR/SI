@@ -479,12 +479,6 @@
             </form>
         </div>
 
-        <div id="thankYouSection" class="hidden">
-    <h1>Thank You!</h1>
-    <p>Your response has been submitted successfully.</p>
-</div>
-        
-
 <div id="outro" class="outro hidden">
     <h3>Yeah I know super short right but damn dude this took so much more time than I thought it would.<br>
         The problem is everytime I add something cool I want to show it to you.<br>
@@ -994,29 +988,6 @@
             console.log('Submissions cleared.');
         }
     }
-
-        document.getElementById("submitButton").addEventListener("click", function () {
-        const form = document.getElementById("questionnaireForm");
-        const formData = new FormData(form);
-
-        fetch("https://formsubmit.co/f291c4ad545c27e60899bfa07822076c", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => {
-                if (response.ok) {
-                    // Hide the form and show the thank-you message
-                    document.getElementById("questionnaireSection").classList.add("hidden");
-                    document.getElementById("thankYouSection").classList.remove("hidden");
-                } else {
-                    alert("There was an error submitting your form. Please try again.");
-                }
-            })
-            .catch((error) => {
-                console.error("Error submitting form:", error);
-                alert("There was an error submitting your form. Please try again.");
-            });
-    });
 
         </script>
 
